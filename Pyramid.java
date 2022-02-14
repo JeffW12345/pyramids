@@ -1,7 +1,7 @@
 public class Pyramid {
 		
 	public static void main(String args[]) {
-		String pyramid = getPyramid(1000, 11);
+		String pyramid = getPyramid(997, 10);
 		System.out.println(pyramid);
 	}
 
@@ -11,19 +11,21 @@ public class Pyramid {
 		int spacesBeforeNumOnRight = (lenTerminatingLine / 2) - (lenTerminatingNumber / 2);
 		int spacesBeforeNumOnLeft = 0;
 		int currentNum = topOfPyramidNum;
+		int prevNum = 0;
 		String pyramid = "";
 		for(int rowNum = 0; rowNum < numLevels; rowNum++) {
 			pyramid += getIndentation(spacesBeforeNumOnRight);
 			pyramid += currentNum;
 			if(rowNum == 1) {
-				spacesBeforeNumOnLeft = String.valueOf(currentNum).length();
+				spacesBeforeNumOnLeft = String.valueOf(prevNum).length();
 			}
 			if(rowNum > 1) {
-				spacesBeforeNumOnLeft += (String.valueOf(currentNum).length() * 2);
+				spacesBeforeNumOnLeft += (String.valueOf(prevNum).length() * 2);
 			}
 			pyramid += rowNum > 0 ? getIndentation(spacesBeforeNumOnLeft) : ""; 
 			pyramid += rowNum > 0 ? currentNum : "";
 			pyramid += "\n";
+			prevNum = currentNum;
 			currentNum++;
 			spacesBeforeNumOnRight -= String.valueOf(currentNum).length(); 
 		}
@@ -46,6 +48,6 @@ public class Pyramid {
 			numSpaces += rowNumber > 0 ? spacesOccupiedByNumber : 0; // The right occurrence of the number
 			topOfPyramidNum++;
 		}
-		return numSpaces;
+		return numSpaces % 2 == 0 ? numSpaces : numSpaces + 1;
 	}
 }
