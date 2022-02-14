@@ -13,7 +13,7 @@ public class Pyramid {
 		int currentNum = topOfPyramidNum;
 		String pyramid = "";
 		for(int rowNum = 0; rowNum < numLevels; rowNum++) {
-			pyramid += getIndation(spacesBeforeNumOnRight);
+			pyramid += getIndentation(spacesBeforeNumOnRight);
 			pyramid += currentNum;
 			if(rowNum == 1) {
 				spacesBeforeNumOnLeft = Integer.valueOf(currentNum).toString().length();
@@ -21,7 +21,7 @@ public class Pyramid {
 			if(rowNum > 1) {
 				spacesBeforeNumOnLeft += Integer.valueOf(currentNum).toString().length() * 2;
 			}
-			pyramid += rowNum > 0 ? getIndation(spacesBeforeNumOnLeft) : ""; 
+			pyramid += rowNum > 0 ? getIndentation(spacesBeforeNumOnLeft) : ""; 
 			pyramid += rowNum > 0 ? currentNum : "";
 			pyramid += "\n";
 			currentNum++;
@@ -30,7 +30,7 @@ public class Pyramid {
 		return pyramid;
 	}
 
-	private static String getIndation(int indentationThisLine) {
+	private static String getIndentation(int indentationThisLine) {
 		String emptySpaces = "";
 		for(int i = 0; i < indentationThisLine; i++) {
 			emptySpaces += " ";
