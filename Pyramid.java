@@ -22,7 +22,7 @@ public class Pyramid {
 			if(rowNum > 1) {
 				spacesBeforeSecondNumOnRow += (String.valueOf(prevNum).length() * 2);
 			}
-			// If after starting row, add spaces before the second number
+			// If after starting row, add spaces before the second number followed by the second number.
 			if(rowNum > 0) {
 				pyramid += getEmptySpaces(spacesBeforeSecondNumOnRow) + currentNum;
 			}
