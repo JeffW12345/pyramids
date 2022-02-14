@@ -16,16 +16,16 @@ public class Pyramid {
 			pyramid += getIndentation(spacesBeforeNumOnRight);
 			pyramid += currentNum;
 			if(rowNum == 1) {
-				spacesBeforeNumOnLeft = Integer.valueOf(currentNum).toString().length();
+				spacesBeforeNumOnLeft = String.valueOf(currentNum).length();
 			}
 			if(rowNum > 1) {
-				spacesBeforeNumOnLeft += Integer.valueOf(currentNum).toString().length() * 2;
+				spacesBeforeNumOnLeft += (String.valueOf(currentNum).length() * 2);
 			}
 			pyramid += rowNum > 0 ? getIndentation(spacesBeforeNumOnLeft) : ""; 
 			pyramid += rowNum > 0 ? currentNum : "";
 			pyramid += "\n";
 			currentNum++;
-			spacesBeforeNumOnRight -= Integer.valueOf(currentNum).toString().length(); 
+			spacesBeforeNumOnRight -= String.valueOf(currentNum).length(); 
 		}
 		return pyramid;
 	}
