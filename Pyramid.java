@@ -1,7 +1,7 @@
 public class Pyramid {
 		
 	public static void main(String args[]) {
-		String pyramid = getPyramid(997, 10);
+		String pyramid = getPyramid(997, 9);
 		System.out.println(pyramid);
 	}
 
