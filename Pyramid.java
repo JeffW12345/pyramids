@@ -1,4 +1,3 @@
-
 public class Pyramid {
 		
 	public static void main(String args[]) {
@@ -7,7 +6,7 @@ public class Pyramid {
 	}
 
 	private static String getPyramid(int topOfPyramidNum, int numLevels) {
-		int lenTerminatingNumber = Integer.valueOf(topOfPyramidNum + numLevels).toString().length();
+		int lenTerminatingNumber = String.valueOf(topOfPyramidNum + numLevels).length();
 		int lenTerminatingLine = getFinalLineLength(topOfPyramidNum, numLevels);
 		int spacesBeforeNumOnRight = (lenTerminatingLine / 2) - (lenTerminatingNumber / 2);
 		int spacesBeforeNumOnLeft = 0;
@@ -42,16 +41,16 @@ public class Pyramid {
 	private static int getFinalLineLength(int topOfPyramidNum, int numLevels) {
 		int numSpaces = 0;
 		for(int rowNumber = 0; rowNumber < numLevels; rowNumber++) {
-			int spacesOccupiedByNumber = Integer.valueOf(topOfPyramidNum).toString().length();
+			int spacesOccupiedByNumber = String.valueOf(topOfPyramidNum).length();
 			numSpaces += spacesOccupiedByNumber; // The left occurrence of the number
 			numSpaces += rowNumber > 0 ? spacesOccupiedByNumber : 0; // The right occurrence of the number
 			// Space between numbers on second row
 			if(rowNumber == 1) {
-				numSpaces += Integer.valueOf(topOfPyramidNum).toString().length();
+				numSpaces += spacesOccupiedByNumber;
 			}
 			// Space between numbers after second row
 			if (rowNumber > 1) {
-				numSpaces += (Integer.valueOf(topOfPyramidNum).toString().length() * 2);
+				numSpaces += (spacesOccupiedByNumber * 2);
 			}
 			topOfPyramidNum++;
 		}
