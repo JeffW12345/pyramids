@@ -44,14 +44,6 @@ public class Pyramid {
 			int spacesOccupiedByNumber = String.valueOf(topOfPyramidNum).length();
 			numSpaces += spacesOccupiedByNumber; // The left occurrence of the number
 			numSpaces += rowNumber > 0 ? spacesOccupiedByNumber : 0; // The right occurrence of the number
-			// Space between numbers on second row
-			if(rowNumber == 1) {
-				numSpaces += spacesOccupiedByNumber;
-			}
-			// Space between numbers after second row
-			if (rowNumber > 1) {
-				numSpaces += (spacesOccupiedByNumber * 2);
-			}
 			topOfPyramidNum++;
 		}
 		return numSpaces;
