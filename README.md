@@ -12,4 +12,3 @@ Creates a non-overlapping pyramid of ascending numbers, with a specified number 
         1008                                                            1008
     1009                                                                    1009
 1010                                                                            1010
-
