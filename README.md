@@ -10,5 +10,5 @@ Creates a non-overlapping pyramid of ascending numbers, with a specified number 
             1003                                       1003
         1004                                               1004
     1005                                                       1005
-1006                                                               1006
+
     
