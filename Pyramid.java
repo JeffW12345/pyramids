@@ -43,8 +43,8 @@ public class Pyramid {
 		int numSpaces = 0;
 		for(int rowNumber = 0; rowNumber < numLevels; rowNumber++) {
 			int spacesOccupiedByNumber = Integer.valueOf(topOfPyramidNum).toString().length();
-			numSpaces += spacesOccupiedByNumber; // The right occurrence of the number
-			numSpaces += rowNumber > 0 ? spacesOccupiedByNumber : 0; // The left occurrence of the number
+			numSpaces += spacesOccupiedByNumber; // The left occurrence of the number
+			numSpaces += rowNumber > 0 ? spacesOccupiedByNumber : 0; // The right occurrence of the number
 			// Space between numbers on second row
 			if(rowNumber == 1) {
 				numSpaces += Integer.valueOf(topOfPyramidNum).toString().length();
